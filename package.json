@@ -1,0 +1,22 @@
+{
+  "name": "node-js-api",
+  "version": "0.0.0",
+  "description": "basic node js api with express framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EugeneFi1/node-js-api.git"
+  },
+  "keywords": [
+    "root"
+  ],
+  "author": "EugeneFil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugeneFi1/node-js-api/issues"
+  },
+  "homepage": "https://github.com/EugeneFi1/node-js-api#readme"
+}
