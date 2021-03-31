@@ -2,6 +2,8 @@ const express = require('express');
 //const MongoClient = require('mongodb').MongoClient;
 //const bodyParser = require('body-parser');
 const app = express();
+const testFolder = "./test_folder/";
+const fs = require('fs');
 
 const port = 8000;
 app.listen(port, () => {
@@ -9,8 +11,14 @@ app.listen(port, () => {
 });
 
 app.get("/get", function (req, res) {
-    const hello = {name: "hello world"};
-    res.send(hello);
+
+    fs.readdir(testFolder, (err, files) => {
+        res.send(files);
+
+        files.forEach(file => {
+            console.log(file);
+        });
+    })
 });
 app.get("/get-all", function (req, res) {
     res.send({name: "get-all"});
