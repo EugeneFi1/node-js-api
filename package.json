@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "start"
+    "test": "start",
+    "run-test": "testcafe chrome ./testcafe/test/example.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "mongodb": "^2.2.16"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "testcafe": "^1.13.0"
   }
 }

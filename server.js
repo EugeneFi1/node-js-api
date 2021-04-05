@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const testFolder = "./test_folder/";
 const fs = require('fs');
+const createTestCafe = require('testcafe');
 
 const port = 8000;
 app.listen(port, () => {
@@ -22,4 +23,20 @@ app.get("/get", function (req, res) {
 });
 app.get("/get-all", function (req, res) {
     res.send({name: "get-all"});
+});
+
+app.get("/run", async function(req, res) {
+    const testCafe = await createTestCafe();
+
+    try {
+        const runner = testCafe.createRunner();
+
+        await runner
+            .src('./testcafe/test/example.ts')
+            .browsers('chrome')
+            .run();
+    }
+    finally {
+        await testCafe.close();
+    }
 });
